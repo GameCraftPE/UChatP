@@ -1,6 +1,6 @@
 <?php
 
-namespace Mcrafterss;
+namespace Mcrafters;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -9,8 +9,6 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\event\player\PlayerChatEvent;
 class Main extends PluginBase implements Listener{
-messages:
-- fuck
 
 	public function onEnable(){
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "UChatP Has Been Enabled.");
