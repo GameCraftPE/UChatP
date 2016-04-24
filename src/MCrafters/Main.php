@@ -27,6 +27,6 @@ class Main extends PluginBase implements Listener{
 	
 	public function onChatEvent(PlayerChatEvent $event){
 		$message = $event->getMessage();
-		$event->setMessage($this->getConfig()->get("identify-capital-alphabet") ? str_replace($this->getConfig->get("messages"), $this->mosaicList, $message) : str_ireplace($this->getConfig->get("messages"), $this->mosaicList, $message));
+		$event->setMessage($this->getConfig()->get("identify-capital-alphabet") ? str_replace($this->getConfig()->get("messages"), $this->mosaicList, $message) : str_ireplace($this->getConfig()->get("messages"), $this->mosaicList, $message));
 	}
 }
