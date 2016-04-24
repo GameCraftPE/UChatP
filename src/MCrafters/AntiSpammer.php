@@ -10,11 +10,7 @@ class AntiSpammer extends PluginBase implements Listener{
 
     private $players = [];
     private $warnings = [];
-    private $muted = [];
-    public function onEnable(){
-        $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->saveDefaultConfig();
-    }
+    
     public function onChat(PlayerChatEvent $e){
         if($e->getPlayer()->hasPermission("spam.bypass")) return;
         if(isset($this->players[spl_object_hash($e->getPlayer())]) and
