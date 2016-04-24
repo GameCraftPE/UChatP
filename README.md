@@ -2,6 +2,6 @@
 Ultimate chat protect plugin
 
 # Features:
-* chat cooldown
+* chat cooldown [x]
 * block bad words [x]
 * block adverting
