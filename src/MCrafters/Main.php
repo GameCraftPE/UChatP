@@ -16,7 +16,9 @@ class Main extends PluginBase implements Listener{
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "UChatP Has Been Enabled.");
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "By: Mcrafterss. http://github.com/MCrafterss");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
-		$this->saveDefaultConfig();
+		@mkdir($this->getDataFolder());
+                $this->saveDefaultConfig();
+                $this->reloadConfig();
 		$this->mosaicList = array();
 		foreach($this->getConfig()->get("messages") as $m){
 			$this->mosaicList[] = str_repeat($this->getConfig()->get("mosaic"), strlen($m));
