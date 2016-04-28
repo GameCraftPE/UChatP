@@ -51,14 +51,14 @@ class Main extends PluginBase implements Listener{
         	$parts = explode('.', $message);
         	if(sizeof($parts) >= 4){
             		if (preg_match('/[0-9]+/', $parts[1])){
-                		$event->setCancelled(true);
-                		$player->kick("Advertising");
+                		$e->setCancelled(true);
+                		$e->getPlayer()->kick("Advertising");
             		}
         	}
         	foreach ($this->webEndings as $url) {
             		if (strpos($message, $url) !== FALSE){
-                		$event->setCancelled(true);
-                		$player->kick("Advertising");
+                		$e->setCancelled(true);
+                		$e->getPlayer()->kick("Advertising");
         	 	}	
 		}
 	}
