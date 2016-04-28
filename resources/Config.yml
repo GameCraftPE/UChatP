@@ -5,10 +5,10 @@ time: 1
 #max warnings a player will receive until they receive a block type
 max_warnings: 2
 #warn player each time they spam
-warning_message: "&ePlease stop chatting too quick! &cWarnings:&6 %warns%"
+warning_message: "§ePlease stop chatting too quick! &cWarnings:&6 %warns%"
 #message that will be sent if player is spamming
 #%player% = players name
-message: "&aPlease let others chat, thank you. :)"
+kick_reason: "$§You have been kicked for spamming."
 
 #bad words
 messages:
