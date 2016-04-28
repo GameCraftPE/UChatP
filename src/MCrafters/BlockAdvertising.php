@@ -5,7 +5,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 
-class EventListener implements Listener{
+class BlockAdvertising implements Listener{
 
 private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
         
@@ -23,7 +23,6 @@ private $webEndings = array(".net",".com",".co",".org",".info",".tk");
                 $player->kick("Advertising");
             }
         }
-        //----------------------------
         foreach ($this->webEndings as $url) {
             if (strpos($message, $url) !== FALSE) 
             {
@@ -31,7 +30,6 @@ private $webEndings = array(".net",".com",".co",".org",".info",".tk");
                 $player->kick("Advertising");
             }
         }
-        //----------------------------
         
     }
     }
