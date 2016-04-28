@@ -36,10 +36,10 @@ class Main extends PluginBase implements Listener{
                 		$this->warnings[spl_object_hash($e->getPlayer())] = 0;
         		}
         		++$this->warnings[spl_object_hash($e->getPlayer())];
-        		$e->getPlayer()->sendMessage(str_replace("%warns%", $this->warnings[spl_object_hash($e->getPlayer())],
+        		$e->getPlayer()->sendMessage(str_replace("%warns%", $this->warnings[spl_object_hash($e->getPlayer())], $this->getConfig()->getAll(){"warning_message"}));
         		$e->setCancelled();
         		if($this->warnings[spl_object_hash($e->getPlayer())] >= intval($this->getConfig()->get("max_warnings"))){
-                		$e->getPlayer()->sendMessage(str_replace("%player%", $e->getPlayer()->getName(), FMT::colorMessage($this->getConfig()->getAll(){"message"})));
+                		$e->getPlayer()->sendMessage(str_replace("%player%", $e->getPlayer()->getName(), $this->getConfig()->getAll(){"message"}));
         			unset($this->warnings[spl_object_hash($e->getPlayer())]);
                 		$e->setCancelled();
             		}
