@@ -29,7 +29,7 @@ class Main extends PluginBase implements Listener{
 	public function onChatEvent(PlayerChatEvent $e){
 		// filter bad words
 		$message = $e->getMessage();
-		$event->setMessage($this->getConfig()->get("identify-capital-alphabet") ? str_replace($this->getConfig()->get("messages"), $this->mosaicList, $message) : str_ireplace($this->getConfig()->get("messages"), $this->mosaicList, $message));
+		$e->setMessage($this->getConfig()->get("identify-capital-alphabet") ? str_replace($this->getConfig()->get("messages"), $this->mosaicList, $message) : str_ireplace($this->getConfig()->get("messages"), $this->mosaicList, $message));
 		// filter spam
 		if(isset($this->players[spl_object_hash($e->getPlayer())]) and (time() - $this->players[spl_object_hash($e->getPlayer())] <= intval($this->getConfig()->get("time")))){
             		if(!isset($this->warnings[spl_object_hash($e->getPlayer())])){
