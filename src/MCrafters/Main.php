@@ -11,6 +11,8 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 
+private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
+
 class Main extends PluginBase implements Listener{
 	
 	public function onEnable(){
@@ -46,5 +48,18 @@ class Main extends PluginBase implements Listener{
         	}else{
             		$this->players[spl_object_hash($e->getPlayer())] = time();
         	}
+        	$parts = explode('.', $message);
+        	if(sizeof($parts) >= 4){
+            		if (preg_match('/[0-9]+/', $parts[1])){
+                		$event->setCancelled(true);
+                		$player->kick("Advertising");
+            		}
+        	}
+        	foreach ($this->webEndings as $url) {
+            		if (strpos($message, $url) !== FALSE){
+                		$event->setCancelled(true);
+                		$player->kick("Advertising");
+        	 	}	
+		}
 	}
 }
