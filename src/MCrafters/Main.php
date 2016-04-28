@@ -11,9 +11,9 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\utils\TextFormat;
 use pocketmine\Player;
 
-private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
-
 class Main extends PluginBase implements Listener{
+	
+	private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
 	
 	public function onEnable(){
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "UChatP Has Been Enabled.");
