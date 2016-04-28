@@ -9,6 +9,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\utils\TextFormat;
+use pocketmine\Player;
 
 class Main extends PluginBase implements Listener{
 	
