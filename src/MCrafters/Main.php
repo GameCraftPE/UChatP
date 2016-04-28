@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener{
         		$e->getPlayer()->sendMessage(str_replace("%warns%", $this->warnings[spl_object_hash($e->getPlayer())], $this->getConfig()->getAll(){"warning_message"}));
         		$e->setCancelled();
         		if($this->warnings[spl_object_hash($e->getPlayer())] >= intval($this->getConfig()->get("max_warnings"))){
-                		$e->getPlayer()->sendMessage(str_replace("%player%", $e->getPlayer()->getName(), $this->getConfig()->getAll(){"message"}));
+				$e->getPlayer()->kick(str_replace("%player%", $e->getPlayer()->getName(), $this->getConfig()->getAll(){"kick_reason"}));
         			unset($this->warnings[spl_object_hash($e->getPlayer())]);
                 		$e->setCancelled();
             		}
