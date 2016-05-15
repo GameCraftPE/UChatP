@@ -14,6 +14,8 @@ use pocketmine\Player;
 class Main extends PluginBase implements Listener{
 	
 	private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
+	private $players = [];
+	private $warnings = [];
 	
 	public function onEnable(){
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "UChatP Has Been Enabled.");
@@ -49,8 +51,8 @@ class Main extends PluginBase implements Listener{
             		$this->players[spl_object_hash($e->getPlayer())] = time();
         	}
         	$parts = explode('.', $message);
-        	if(sizeof($parts) >= 4){
-            		if (preg_match('/[0-9]+/', $parts[1])){
+        	if(count($parts) >= 4){
+            		if (preg_match('/[a-zA-Z0-9]/', $parts[1])){
                 		$e->setCancelled(true);
                 		$e->getPlayer()->kick("§cAdvertising");
             		}
