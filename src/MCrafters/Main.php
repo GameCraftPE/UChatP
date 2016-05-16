@@ -51,7 +51,7 @@ class Main extends PluginBase implements Listener{
             		$this->players[spl_object_hash($e->getPlayer())] = time();
         	}
         	$parts = explode('.', $message);
-        	if(count($parts) >= 4){
+        	if(count($parts) >= 2){
             		if (preg_match('/[a-zA-Z0-9]/', $parts[1])){
                 		$e->setCancelled(true);
                 		$e->getPlayer()->kick("§cAdvertising");
