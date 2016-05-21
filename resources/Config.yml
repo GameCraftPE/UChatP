@@ -1,7 +1,7 @@
 #antispam
 
 #time in seconds a player has to wait to send a message again
-time: 2
+time: 1
 #max warnings a player will receive until they receive a block type
 max_warnings: 2
 #warn player each time they spam
