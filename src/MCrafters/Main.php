@@ -13,7 +13,7 @@ use pocketmine\Player;
 
 class Main extends PluginBase implements Listener{
 	
-	private $webEndings = array(".net",".com",".co",".org",".info",".tk"); 
+	private $webEndings = array(".net",".com",".co",".org",".info",".tk",".ml",".ga",".au",".uk",".me",.sa"); 
 	private $players = [];
 	private $warnings = [];
 	
