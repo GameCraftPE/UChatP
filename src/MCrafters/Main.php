@@ -19,7 +19,7 @@ class Main extends PluginBase implements Listener{
 	
 	public function onEnable(){
 		$this->getServer()->getLogger()->info(TextFormat::BLUE . "UChatP Has Been Enabled.");
-		$this->getServer()->getLogger()->info(TextFormat::BLUE . "By: Mcrafterss. http://github.com/MCrafterss");
+		$this->getServer()->getLogger()->info(TextFormat::BLUE . "Plugin Made By: Mcrafterss. http://github.com/MCrafterss");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 		@mkdir($this->getDataFolder());
                 $this->saveDefaultConfig();
