@@ -64,4 +64,16 @@ class Main extends PluginBase implements Listener{
 			}
 		}
 	}
+	if($e->isCancelled())
+			return;
+		$player = $e->getPlayer();
+		$recipients = $e->getRecipients();
+		foreach($recipients as $key => $recipient){
+			if($recipient instanceof Player){
+				if($recipient->getLevel()->getName() != $player->getLevel()->getName()){
+					unset($recipients[$key]);
+				}
+			}
+		}
+		$e->setRecipients($recipients);
 }
